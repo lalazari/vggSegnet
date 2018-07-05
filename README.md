@@ -23,7 +23,7 @@ sudo pip install --upgrade keras
 
 You need to make four folders
 
-*  images_train - For all the training images 
+*  images_train 
 *  images_test
 *  annotations_train
 *  annotations_test
@@ -32,7 +32,6 @@ The filenames of the annotation images should be same as the filenames of the RG
 The size of the annotation image for the corresponding RGB image should be same. 
 For each pixel in the RGB image, the class label of that pixel in the annotation image would be the value of the blue pixel.
 
-Example code to generate annotation images :
 Only use bmp or png format for the annotation images.
 
 ### Download the sample prepared dataset
@@ -46,7 +45,7 @@ https://drive.google.com/file/d/0B0d9ZiqAgFkiOHR1NTJhWVJMNEU/view?usp=sharing
 To train the model run the following command:
 
 ```shell
-python  train.py \
+python train.py \
  --save_weights_path=weights/ex1 \
  --train_images="data/dataset1/images_prepped_train/" \
  --train_annotations="data/dataset1/annotations_prepped_train/" \
@@ -61,7 +60,7 @@ python  train.py \
 To get the predictions of a trained model
 
 ```shell
-python  predict.py \
+python predict.py \
  --load_weights_path=weights/ex1 \
  --test_images="data/dataset1/images_prepped_test/" \
  --output_path="data/predictions/" \
